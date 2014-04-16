@@ -1,7 +1,11 @@
 Flix::Application.routes.draw do
 
-  # resources :movies, only: [:index,:show]
-  get "/movies" => "movies#index"
+  resources :movies, only: [:index,:show]
+  # get "/movies" => "movies#index"
+  # get "movies/:id" => "movies#show"
+
+  # resources :movies
+
   root to: "movies#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
