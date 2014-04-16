@@ -1,21 +1,3 @@
-<!-- <h1> <%= @movies.count %> Movies </h1>
-<ul>
-<% @movies.each do |movie| %>
-	<li> 
-		<b><%= movie.title %> </b>
-		<span style="color:red;"> <%= number_to_currency(movie.total_gross) %> </span>
-		<p>
-  			<%= movie.description %>
-		</p>
-		<p>
-  			<%= movie.released_on %>
-		</p>
-	</li>
-<% end %>
-</ul> -->
-
-
-
 <h1> <%= pluralize(@movies.size, "Movie") %></h1>
 
 <% @movies.each do |movie| %>
