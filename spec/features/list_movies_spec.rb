@@ -21,12 +21,19 @@ describe "View the list of movies" do
 		                      description: "Peter Parker gets bit by a genetically modified spider",
 		                      released_on: "2002-05-03")
 
+		movie4 = Movie.create(title: "Catwoman",
+							    rating: "PG-13",
+							    total_gross: 40200000.00,
+							    description: "Patience Philips has a more than respectable career as a graphic designer",
+							    released_on: "2004-07-23")
+
 		visit movies_url
 
-		expect(page).to have_text("3 Movies")
+		expect(page).to have_text("4 Movies")
 		expect(page).to have_text(movie1.title)
 		expect(page).to have_text(movie2.title)
 		expect(page).to have_text(movie3.title)
+		expect(page).to have_text(movie4.title)
 
 		expect(page).to have_text(movie1.rating)
 	end
