@@ -32,7 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :test, :development do
+group :test do
 	gem 'rspec-rails'
 end
 
