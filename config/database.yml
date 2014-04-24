@@ -11,7 +11,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: test
+  database: development_db
   pool: 5
   username: plm
   password: plm
@@ -32,7 +32,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: test
+  database: production_db
   pool: 5
   username: plm
   password: plm
