@@ -20,6 +20,22 @@ class MoviesController < ApplicationController
 		redirect_to movie_path(@movie)
 	end
 
+	def new
+		@movie = Movie.new
+	end
+
+	def create
+		@movie = Movie.new(save_movie_params)
+		@movie.save
+		redirect_to movie_path(@movie)
+	end
+
+	def destroy
+		@movie = Movie.find_by(params[:id])
+		@movie.destroy
+		redirect_to movies_path
+	end
+
 	private
 	def save_movie_params
 		params.require(:movie).permit(:title,:rating,:total_gross,:description,:released_on)
