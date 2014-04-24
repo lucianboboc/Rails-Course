@@ -11,6 +11,14 @@ describe "Editing a movie" do
 
     expect(find_field("Title").value).to have_content(movie.title)
 
+    fill_in "Title", with: "Updated movie title"
+
+    click_button "Update Movie"
+
+    expect(current_path).to eq(movie_path(movie))
+
+    expect(page).to have_text("Updated movie title")
+
   end
   
 end
