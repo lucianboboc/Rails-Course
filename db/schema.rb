@@ -25,25 +25,4 @@ ActiveRecord::Schema.define(version: 20140416100749) do
 
   add_index "movies", ["title"], name: "index_movies_on_title", using: :btree
 
-  create_table "packages", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "products", force: true do |t|
-    t.string   "name"
-    t.integer  "serial_nr"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", force: true do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
