@@ -28,6 +28,8 @@ describe "Viewing an individual movie" do
 
 		visit movie_path(movie)
 
+		expect(page).to have_selector("img[src$='#{movie.image_file_name}']")
+
 		expect(page).to have_text("Flop!")
 	end
 
