@@ -12,7 +12,16 @@
 <%= content_tag(:p, flash[:notice], id: "flash_id") %>
 <% end %>
 
+
+<%= render "layouts/header" %>
+
+
+<%= render "layouts/asside" %>
+
+
 <%= yield %>
+
+<%= render "layouts/footer" %>
 
 </body>
 </html>
