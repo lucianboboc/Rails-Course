@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
 
+	# before_action :confirm_logged_in
+
 	def index
 		@movies = Movie.released
 	end
