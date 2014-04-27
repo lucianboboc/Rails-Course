@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20140425181351) do
     t.string   "director"
     t.string   "duration"
     t.string   "image_file_name"
-    t.string   "password_digest"
   end
 
   add_index "movies", ["title"], name: "index_movies_on_title", using: :btree
