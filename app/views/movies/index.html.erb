@@ -4,7 +4,7 @@
 </br>
 
 <% @movies.each do |movie| %>
-  <article>
+  <article class="movie">
     <header>
       <%= image_for_movie(movie) %>
       <h2><%= link_to movie.title, movie_path(movie.id) %></h2>
