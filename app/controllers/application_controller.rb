@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
 			flash[:notice] = "Please Log in"
   			redirect_to :controller =>  "access", :action => "login"
   			
-  			return false
-  		else
-  			return true
-  		end
+  		return false
+  	else
+  		return true
+  	end
 	end
 end
