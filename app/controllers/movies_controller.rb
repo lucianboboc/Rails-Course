@@ -1,6 +1,8 @@
 class MoviesController < ApplicationController
 
 	# before_action :confirm_logged_in
+	
+	RATINGS = %w(G PG PG-13 R NC-17)
 
 	def index
 		@movies = Movie.released
@@ -17,9 +19,11 @@ class MoviesController < ApplicationController
 
 	def update
 		@movie = Movie.find_by(:id => params[:id])
-		@movie.update_attributes(save_movie_params)
-		
-		redirect_to movie_path(@movie)
+		if @movie.update_attributes(save_movie_params)
+			redirect_to movie_path(@movie)
+		else
+			render :edit
+		end
 	end
 
 	def new
@@ -28,8 +32,11 @@ class MoviesController < ApplicationController
 
 	def create
 		@movie = Movie.new(save_movie_params)
-		@movie.save
-		redirect_to movie_path(@movie)
+		if @movie.save
+			redirect_to movie_path(@movie)
+		else
+			render :new
+		end
 	end
 
 	def destroy
