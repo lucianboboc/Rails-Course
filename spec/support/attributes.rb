@@ -11,3 +11,12 @@ def movie_attributes(attr = {})
     	image_file_name: "a.png"
 	}.merge(attr)
 end
+
+
+def review_attributes(overrides = {})
+  {
+    name: "Roger Ebert",
+    stars: 3,
+    comment: "I laughed, I cried, I spilled my popcorn!"
+  }.merge(overrides)
+end

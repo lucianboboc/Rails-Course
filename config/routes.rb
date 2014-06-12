@@ -1,5 +1,7 @@
 Flix::Application.routes.draw do
 
+  resources :reviews
+
   resources :access, :only => [:index]
   
   # get "access/login" => "access#login"

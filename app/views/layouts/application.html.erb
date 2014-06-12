@@ -8,10 +8,9 @@
 </head>
 <body>
 
-<% if flash[:notice] %>
-<%= content_tag(:p, flash[:notice], id: "flash_id") %>
+<% flash.each do |key, value| %>
+	<%= content_tag(:p, value, id: "flash #{key}") %>
 <% end %>
-
 
 <%= render "layouts/header" %>
 

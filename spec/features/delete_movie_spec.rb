@@ -14,4 +14,14 @@ describe "Deleting a movie" do
 
   	expect(page).not_to have_text(movie.title)
   	end
+
+  	it "destroys the movie and shows the movie listing without the deleted movie" do
+  		movie = Movie.create(movie_attributes)
+
+  		visit movie_path(movie)
+
+  		click_link "Delete"
+
+  		expect(page).to have_text("Movie successfully deleted!")
+  	end
   end

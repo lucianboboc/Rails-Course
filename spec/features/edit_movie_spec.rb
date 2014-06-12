@@ -28,5 +28,12 @@ describe "Editing a movie" do
     click_button "Update Movie"
     expect(page).to have_text("error")
   end
+
+  it "updates the movie and shows the movie's updated details" do
+    movie = Movie.create(movie_attributes)
+    visit edit_movie_url(movie)
+    click_button "Update Movie"
+    expect(page).to have_text('Movie successfully updated!')
+  end
   
 end

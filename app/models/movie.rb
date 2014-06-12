@@ -28,4 +28,7 @@ class Movie < ActiveRecord::Base
 	def self.recently_added
 		order('created_at desc').limit(3)
 	end
+
+	has_many :reviews, :dependent => :destroy
+
 end
