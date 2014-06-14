@@ -31,4 +31,8 @@ class Movie < ActiveRecord::Base
 
 	has_many :reviews, :dependent => :destroy
 
+	def average_stars
+		reviews.average(:stars)
+	end
+
 end
