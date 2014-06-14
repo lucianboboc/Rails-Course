@@ -1,24 +1,25 @@
 class MoviesController < ApplicationController
 
 	# before_action :confirm_logged_in
-	
+	before_action :set_movie, only: [:show, :edit, :update]
+
 	RATINGS = %w(G PG PG-13 R NC-17)
 
 	def index
-		@movies = Movie.released
+		@movies = Movie.all
 	end
 
 	def show
-		@movie = Movie.find_by(:id => params[:id])
+		# @movie = Movie.find_by(:id => params[:id])
 		Rails.logger.debug(@movie)
 	end
 
 	def edit
-		@movie = Movie.find_by(:id => params[:id])
+		# @movie = Movie.find_by(:id => params[:id])
 	end
 
 	def update
-		@movie = Movie.find_by(:id => params[:id])
+		# @movie = Movie.find_by(:id => params[:id])
 		if @movie.update_attributes(save_movie_params)
 			redirect_to movie_path(@movie), :notice => "Movie successfully updated!"
 		else
@@ -49,4 +50,9 @@ class MoviesController < ApplicationController
 	def save_movie_params
 		params.require(:movie).permit(:title,:rating,:total_gross,:description,:released_on, :cast, :director, :duration, :image_file_name)
 	end
+
+	def set_movie
+		@movie = Movie.find_by(:id => params[:id])
+	end
+
 end
