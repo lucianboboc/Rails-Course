@@ -1,15 +1,15 @@
 Flix::Application.routes.draw do
 
-  resources :reviews
-
-  resources :access, :only => [:index]
+    resources :access, :only => [:index]
   
   # get "access/login" => "access#login"
   # post "access/logout" => "access#logout"
   # post "access/attempt_login" => "access#attempt_login"
 
 
-resources :movies
+resources :movies do
+  resources :reviews
+end
 
 
   match "/:controller/(/:action(/:id))", via: [:get, :post]
