@@ -5,6 +5,11 @@
   <%= @movie.cast %>
 </p>
 
+<h3>Average Review</h3>
+<p>
+  <%= format_average_stars(@movie) %>
+</p>
+
 <h3>Director</h3>
 <p>
   <%= @movie.director %>
@@ -38,6 +43,8 @@
     <%= format_total_gross(@movie) %>
   </p>
 </article>
+
+<%= link_to "Write Review", new_movie_review_path(@movie), class: 'button ok review' %>article> </br>
 
 <%= link_to "Back", movies_path %> | <%= link_to "Edit", edit_movie_path %> | <%= link_to "Delete", movie_path(@movie), :method => :delete, :data => {:confirm => "Are you sure?"} %>
 
